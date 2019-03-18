@@ -36,13 +36,16 @@ ng serve --open     // 브라우저 시작
 #### Angular 바인딩의 개념
 ```
 1. {{ 템플릿 표현식 }} 
-  <h1>{{title}}</h1>
+    <h1>{{title}}</h1>
+  
 2. [속성]="템플릿 표현식"
-  <todo [todo]="wordk">
+    <todo [todo]="wordk">
+  
 3. (이벤트)="템플릿 문장"
-  <button (click)="handle()">
+    <button (click)="handle()">
+  
 4. [(ngModel)]="템플릿 표현식" 
-  <input type="text" [(ngModel)]="name">
+    <input type="text" [(ngModel)]="name">
 ```
 
 
