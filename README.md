@@ -44,6 +44,7 @@ ng serve --open     // 브라우저 시작
 ng generate module todo                                     // 모듈 생성
 ng g c todo/todos --module todo/todo.module.ts --export     // 컴포넌트 생성 
 ```
+### 모듈에 컴포넌트 선언된 모습
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
