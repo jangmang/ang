@@ -253,4 +253,40 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 - addTodo() 함수를 잘라낸다.
 - /todo/todos/add-todo/add-todo.component.ts 에 붙혀넣는다.
 
+### 21. /todo/todos/add-todo/add-todo.component.ts 
+```
+export class AddTodoComponent implements OnInit {
 
+    @Output() onTodoAdded = new EventEmitter();
+    newText: string;
+
+    constructor() { }
+
+    ngOnInit() {
+    }
+
+    addTodo(newText: string) {
+        if (this.newText == "") {
+            alert('할일을 입력해주세요.');
+            return false;
+        }
+        this.onTodoAdded.emit(newText);
+        this.newText = '';
+    }
+}
+```
+
+### 22. /todo/todos/todos.commonent.html 
+```
+<app-add-todo (onTodoAdded)="addTodo($event)"></app-add-todo>   
+```
+
+### 23. /todo/todos/todos.commonent.ts
+```
+addTodo(text: string) {
+    this.todos.push({
+        id:this.todos.length+1,
+        text:text
+    });
+}
+```
