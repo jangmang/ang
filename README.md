@@ -7,7 +7,8 @@ ng --version 		       // 설치버전확인
 ```
 ## 프로젝트만들기
 ```
-ng new {디렉토리명}
+ng new {디렉토리명}  // 프로젝트 만들기
+ng serve --open     // 브라우저 시작
 ```
 ### src구조
 - [app] html,ts,css
