@@ -166,6 +166,10 @@ imports: [
 ### 8. /todo/todos/todos.component.ts
 ```
 addTodo(newText: string) {
+    if(this.newText=="") {
+        alert('할일을 입력해주세요.');
+        return false;
+    }
     this.todos.push({
         id: this.todos.length+1,
         text: newText
@@ -174,19 +178,79 @@ addTodo(newText: string) {
 }
 ```
 
-
-
-
-
-
-
-
-### 3. todolist 컴포넌트 생성
+### 9. todolist 컴포넌트 생성
+- 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
 ```
 
+### 10. /todo/todos/todos.component.html
+```
+<input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label>
+```
+을 잘라낸다.
 
+### 11. /todo/todos/todolist/todolist.component.ts
+template에 붙혀넣는다
+```
+<input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label> 
+```
 
+### 12. /todo/share 폴더생성후
+```
+ng generate class todo/share/todomodel
+```
+
+### 13. /todo/share/todomodel.ts
+```
+export class Todomodel {
+    id: number;
+    test: string;
+}
+```
+
+### 14. /todo/todos/todolist/todolist.component.ts
+```
+import { Todomodel } from '../../share/Todomodel';
+@Input() todo: Todomodel; //input 데코레이터사용
+```
+
+### 15. /todo/todos/todos.component.ts
+```
+import { Todomodel } from '../../share/Todomodel';
+todos: Todomodel[];
+```
+
+### 16. /todo/todos/todos.component.html
+```
+<app-todolist [todo]="todo"></app-todolist> //속성바인딩
+```
+### 17. add-todo 컴포넌트 생성
+- 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
+```
+ng g c todo/todos/add-todo --inline-template --inline-style
+```
+
+### 18. /todo/todos/todos.commonent.html
+```
+<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
+<button (click)="addTodo(newText)">추가</button>
+```
+를 잘라낸다.
+```
+<app-add-todo></app-add-todo> 
+```
+로 교체한다.
+
+### 19. /todo/todos/add-todo/add-todo.component.ts
+- template에 붙혀넣는다.
+```
+<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
+<button (click)="addTodo(newText)">추가</button>
+```
+
+### 20. /todo/todos/todos.component.ts
+- addTodo() 함수를 잘라낸다.
+- /todo/todos/add-todo/add-todo.component.ts 에 붙혀넣는다.
 
 
