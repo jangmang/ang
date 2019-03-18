@@ -33,13 +33,9 @@ ng serve --open     // 브라우저 시작
 #### Angular Component의 개념
 - 앵귤러의 핵심요소로 html요소들의 뷰와 로직으로 구성된 그룹
 
-
-
-
+<br><br>
 <hr/>
-
-
-
+<br><br>
 
 # Todo list 예제만들기
 
