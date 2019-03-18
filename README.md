@@ -291,7 +291,10 @@ addTodo(text: string) {
 }
 ```
 
-### 24. 라우터를 위한 mainlist 컴포넌트 추가
+<br><hr/><br>
+
+##라우터 알아보기
+### 24.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
 ```
@@ -312,4 +315,19 @@ const routes: Routes = [
 <a routerLink="/todo">Todo</a>
 
 <router-outlet></router-outlet>
+```
+
+<br><hr/><br>
+
+##파이프를 알아보기
+### 27. /todo/todos/todos.component.ts
+```
+today: Date = new Date();
+```
+
+### 28. /todo/todos/todos.component.html
+```
+<h2>{{ today | date:'yy년 M월 d일' }}</h2>
+
+{{ todos | json }}
 ```
