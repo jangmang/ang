@@ -15,8 +15,8 @@ ng serve --open     // 브라우저 시작
   첫시작스크립트
 - [app.module.ts] 
   기본 component와 module을 선언 
-- [style.css] 
-  공통css
+- [style.css]
+공통css
 - [app] 
   사용될 module.ts와 component(html, ts, css)파일
 - [asset] 
