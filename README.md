@@ -293,7 +293,8 @@ addTodo(text: string) {
 
 <br><hr/><br>
 
-##라우터 알아보기
+## 라우터 알아보기
+
 ### 24.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
@@ -319,7 +320,8 @@ const routes: Routes = [
 
 <br><hr/><br>
 
-##파이프를 알아보기
+## 파이프를 알아보기
+
 ### 27. /todo/todos/todos.component.ts
 ```
 today: Date = new Date();
