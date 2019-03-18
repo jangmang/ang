@@ -79,7 +79,7 @@ import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 �
 })
 export class TodoModule { } 
 ```
-### 2. todos.component.html
+### 2. /todo/todos/todos.component.html
 ```
 <div class="title">
     <h1>나의 일정</h1>
@@ -98,7 +98,33 @@ export class TodoModule { }
 </div>
 ```
 
+### 3. /todo/todos/todos.component.ts
+```
+import { Component, OnInit } from '@angular/core';
 
+@Component({
+    selector: 'app-todos',
+    templateUrl: './todos.component.html',
+    styleUrls: ['./todos.component.css']
+})
+export class TodosComponent implements OnInit {    
+    ***
+    todos: {
+        done: boolean,
+        text: string
+    }[];
+   
+    constructor() {
+        this.todos = [
+            {done:false, text:"운동하기"},
+            {done:false, text:"공부하기"},
+        ];
+    }
+    ***
+    ngOnInit() {
+    }
+}
+```
 
 
 
