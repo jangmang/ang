@@ -12,17 +12,17 @@ ng serve --open     // 브라우저 시작
 ```
 #### src구조
 - [main.ts] 
-  > 첫시작스크립트
+  첫시작스크립트
 - [app.module.ts] 
-  > 기본 component와 module을 선언 
+  기본 component와 module을 선언 
 - [style.css] 
-  > 공통css
+  공통css
 - [app] 
-  > 사용될 module.ts와 component(html, ts, css)파일
+  사용될 module.ts와 component(html, ts, css)파일
 - [asset] 
-  > img
+  img
 - [environments] 
-  > build된 환경변수들이 environments.prod.ts에서 environments.ts로 덮어씌워짐
+  build된 환경변수들이 environments.prod.ts에서 environments.ts로 덮어씌워짐
 
 #### Angular Module의 개념
 - 컴포넌트, 파이프, 서비스 등과 같은 앵귤러 애플리케이션의 주요부분을 기능단위로 그룹핑하게 해준다.
