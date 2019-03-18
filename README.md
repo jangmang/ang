@@ -41,12 +41,15 @@ ng serve --open     // 브라우저 시작
 
 # Todo list 예제만들기
 
-### 모듈만들기
+### 0. 완성된 모습
+![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
+
+### 1. 모듈만들기
 ```
 ng generate module todo                                     // 모듈 생성
 ng g c todo/todos --module todo/todo.module.ts --export     // 컴포넌트 생성 
 ```
-#### 모듈에 컴포넌트 선언된 모습
+> #### 모듈에 컴포넌트 선언된 모습
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -62,7 +65,7 @@ import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 �
 export class TodoModule { } 
 ```
 
-![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
+
 
 
 
