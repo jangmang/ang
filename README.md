@@ -62,7 +62,9 @@ import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 �
 export class TodoModule { } 
 ```
 
+![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
 
-![title](https://github.com/jangmang/pub/blob/master/1.PNG "es6")
+
+
 
 
