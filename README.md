@@ -35,16 +35,16 @@ ng serve --open     // 브라우저 시작
 
 #### Angular 바인딩의 개념
 ```
-1. {{ 템플릿 표현식 }} 
+- {{ 템플릿 표현식 }} 
     <h1>{{title}}</h1>
   
-2. [속성]="템플릿 표현식"
+- [속성]="템플릿 표현식"
     <todo [todo]="wordk">
   
-3. (이벤트)="템플릿 문장"
+- (이벤트)="템플릿 문장"
     <button (click)="handle()">
   
-4. [(ngModel)]="템플릿 표현식" 
+- [(ngModel)]="템플릿 표현식" 
     <input type="text" [(ngModel)]="name">
 ```
 
@@ -79,6 +79,7 @@ import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 �
 })
 export class TodoModule { } 
 ```
+
 ### 2. /todo/todos/todos.component.html
 ```
 <div class="title">
@@ -116,8 +117,8 @@ export class TodosComponent implements OnInit {
    
     constructor() {
         this.todos = [
-            {done:false, text:"운동하기"},
-            {done:false, text:"공부하기"},
+            {id:1, text:"운동하기"},
+            {id:2, text:"공부하기"},
         ];
     }
     ***
@@ -125,6 +126,41 @@ export class TodosComponent implements OnInit {
     }
 }
 ```
+
+### 4. /todo/todos/todos.component.html
+```
+<div class="title">
+    <h1>나의 일정</h1>
+    <h2>3월 18일</h2>
+</div>
+<div>
+    <div *ngFor="let todo of todos">
+        <input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label>
+    </div>
+</div>
+<div>
+    <input type="text" placeholder="할일 추가" [(ngModel)]="newText">
+</div>
+```
+
+### 5. /todo/todos/todos.component.ts
+```
+newText = '';
+```
+
+### 6. /todo/todo.module.ts
+ngModel사용을 위해 FormsModule을 추가해준다.
+관련내용 : https://angular.kr/guide/template-syntax
+```
+import { FormsModule } from '@angular/forms'
+imports: [
+    FormsModule 
+],
+```
+
+
+
+
 
 
 
