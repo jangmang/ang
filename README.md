@@ -290,3 +290,26 @@ addTodo(text: string) {
     });
 }
 ```
+
+### 24. 라우터를 위한 mainlist 컴포넌트 추가
+```
+ng g c mainlist
+```
+
+### 25. app-routing.module.ts
+```
+const routes: Routes = [
+    { path: '', component: MainlistComponent},
+    { path: 'todo', component: TodosComponent}
+];
+```
+
+### 26. app.component.html
+```
+<h1>안녕하세요 Todo list입니다.</h1>
+
+<a routerLink="/">Main</a>
+<a routerLink="/todo">Todo</a>
+
+<router-outlet></router-outlet>
+```
