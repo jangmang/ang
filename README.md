@@ -133,12 +133,12 @@ export class TodosComponent implements OnInit {
     <h1>나의 일정</h1>
     <h2>3월 18일</h2>
 </div>
-<div>
+<div class="todo_list">
     <div *ngFor="let todo of todos">
         <input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label>
     </div>
 </div>
-<div>
+<div class="btn_add">
     <input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 </div>
 ```
