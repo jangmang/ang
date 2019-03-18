@@ -149,7 +149,7 @@ newText = '';
 ```
 
 ### 6. /todo/todo.module.ts
-ngModel사용을 위해 FormsModule을 추가해준다.
+ngModel사용을 위해 FormsModule을 추가해준다.<br>
 관련내용 : https://angular.kr/guide/template-syntax
 ```
 import { FormsModule } from '@angular/forms'
