@@ -33,6 +33,12 @@ ng serve --open     // 브라우저 시작
 #### Angular Component의 개념
 - 앵귤러의 핵심요소로 html요소들의 뷰와 로직으로 구성된 그룹
 
+#### Angular 바인딩의 개념
+1. {{ 템플릿 표현식 }} ==> <h1>{{title}}</h1>
+2. [속성]="템플릿 표현식" ==> <todo [todo]="wordk">
+3. (이벤트)="템플릿 문장" ==> <button (click)="handle()">
+4. [(ngModel)]="템플릿 표현식" ==> <input type="text" [(ngModel)]="name">
+
 
 
 ==========================================================================
@@ -82,6 +88,11 @@ export class TodoModule { }
     <input type="text" placeholder="할일 추가">
 </div>
 ```
+
+
+
+
+
 
 ### 3. todolist 컴포넌트 생성
 ```
