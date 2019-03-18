@@ -9,6 +9,12 @@ ng --version 		       // 설치버전확인
 ```
 ng new {디렉토리명}
 ```
+### src구조
+- [app] html,ts,css
+- [asset] img
+- [environments] build시 프로덕션 환경변수들이 environments.prod.ts에서 environments.ts로 덮어씌워짐
+- [main.ts] 첫시작
+- [style.css] 공통css
 
 
 
