@@ -34,7 +34,9 @@ ng serve --open     // 브라우저 시작
 - 자신만의 template와 로직을 가지고 있다.
 
 
-=================================================================================================
+
+==========================================================================
+
 
 
 # Todo list 예제만들기
@@ -48,14 +50,14 @@ ng g c todo/todos --module todo/todo.module.ts --export     // 컴포넌트 생�
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TodosComponent } from './todos/todos.component'; // todos컴포넌트선언
+import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 임포트
 
 @NgModule({
-  declarations: [TodosComponent], // todos컴포넌트선언
+  declarations: [TodosComponent], // todos 컴포넌트 선언
   imports: [
     CommonModule
   ],
-  exports: [TodosComponent] // todos컴포넌트선언
+  exports: [TodosComponent] // todos 익스포트
 })
 export class TodoModule { } 
 ```
