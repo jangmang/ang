@@ -111,7 +111,7 @@ import { Component, OnInit } from '@angular/core';
 export class TodosComponent implements OnInit {    
     ***
     todos: {
-        done: boolean,
+        id: number,
         text: string
     }[];
    
@@ -150,12 +150,28 @@ newText = '';
 
 ### 6. /todo/todo.module.ts
 ngModel사용을 위해 FormsModule을 추가해준다.<br>
-관련내용 : https://angular.kr/guide/template-syntax
+https://angular.kr/guide/template-syntax
 ```
 import { FormsModule } from '@angular/forms'
 imports: [
     FormsModule 
 ],
+```
+
+### 7. /todo/todos/todos.component.html
+```
+<button (click)="addTodo(newText)">추가</button> 
+```
+
+### 8. /todo/todos/todos.component.ts
+```
+addTodo(newText: string) {
+    this.todos.push({
+        id: this.todos.length+1,
+        text: newText
+    });
+    this.newText = '';
+}
 ```
 
 
