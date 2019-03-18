@@ -16,7 +16,7 @@ ng serve --open     // 브라우저 시작
 - [app.module.ts] 
   기본 component와 module을 선언 
 - [style.css]
-공통css
+  공통css
 - [app] 
   사용될 module.ts와 component(html, ts, css)파일
 - [asset] 
@@ -33,16 +33,18 @@ ng serve --open     // 브라우저 시작
 #### Angular Component의 개념
 - 앵귤러의 핵심요소로 html요소들의 뷰와 로직으로 구성된 그룹
 
-<br><br>
-<hr/>
-<br><br>
+
+
+==========================================================================
+
+
 
 # Todo list 예제만들기
 
 ### 0. 완성된 모습
 ![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
 
-### 1. 모듈만들기
+### 1. 모듈/컴포넌트 생성
 ```
 ng generate module todo                                     // 모듈 생성
 ng g c todo/todos --module todo/todo.module.ts --export     // 컴포넌트 생성 
@@ -62,8 +64,29 @@ import { TodosComponent } from './todos/todos.component'; // todos컴포넌트 �
 })
 export class TodoModule { } 
 ```
+### 2. todos.component.html
+```
+<div class="title">
+    <h1>나의 일정</h1>
+    <h2>3월 18일</h2>
+</div>
+<div>
+    <div>
+        <input type="checkbox"> 운동하기
+    </div>
+    <div>
+        <input type="checkbox"> 공부하기
+    </div>
+</div>
+<div>
+    <input type="text" placeholder="할일 추가">
+</div>
+```
 
-
+### 3. todolist 컴포넌트 생성
+```
+ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
+```
 
 
 
