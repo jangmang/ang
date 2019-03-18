@@ -233,8 +233,8 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 
 ### 18. /todo/todos/todos.commonent.html
 ```
-<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 <button (click)="addTodo(newText)">추가</button>
+<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 ```
 를 잘라낸다.
 ```
@@ -245,8 +245,8 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 ### 19. /todo/todos/add-todo/add-todo.component.ts
 - template에 붙혀넣는다.
 ```
-<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 <button (click)="addTodo(newText)">추가</button>
+<input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 ```
 
 ### 20. /todo/todos/todos.component.ts
