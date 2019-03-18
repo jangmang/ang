@@ -1,29 +1,38 @@
 # Angular CLI 알아보기
 
-## 설치하기
+### 설치하기
 ```
 npm install -g @angular/cli    // 설치하기 
 ng --version 		       // 설치버전확인
 ```
-## 프로젝트만들기
+### 프로젝트만들기
 ```
 ng new {디렉토리명}  // 프로젝트 만들기
 ng serve --open     // 브라우저 시작
 ```
-### src구조
-- [app] html,ts,css
-- [asset] img
-- [environments] build시 프로덕션 환경변수들이 environments.prod.ts에서 environments.ts로 덮어씌워짐
-- [main.ts] 첫시작
-- [style.css] 공통css
+#### src구조
+- [main.ts] 
+  > 첫시작스크립트
+- [app.module.ts] 
+  > 기본 component와 module을 선언 
+- [style.css] 
+  > 공통css
+- [app] 
+  > 사용될 module.ts와 component(html, ts, css)파일
+- [asset] 
+  > img
+- [environments] 
+  > build된 환경변수들이 environments.prod.ts에서 environments.ts로 덮어씌워짐
+
+#### Module이란
+- 세부 구현이 숨겨지고 공개API를 이용해 다른코드에서 재사용 가능한 코드(변수의 스콥이 모듈로 제한)
 
 
+=================================================================================================
 
-=============================================================
-# ECMAScript6 (ECMAScript201)
+# Todo list 예제만들기
 
-## ECMAScript 6 란?
-- ECMA(European Computer Manufacturers Association 유럽 컴퓨터 제조업체 협회)Script란? ECMA 인터네셔널의 ECMA-262 기술 규격에 정의된 표준화된 스크립트 프로그래밍 언어이며, 그 버전명칭을 줄여서 국내에서 아직까지 널리 사용하고 있는 자바스크립트 버전이 ES5이며, 2015년 6월 개정된 버전이 바로 ES6 또는 ES2015라고도 부릅니다. 
+
 
 ![title](https://github.com/jangmang/pub/blob/master/1.PNG "es6")
 
