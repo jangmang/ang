@@ -1,9 +1,8 @@
 # Angular CLI 알아보기
 
 ```
-npm install -g @angular/cli // 
-ng --version //설치버전확인
-
+npm install -g @angular/cli    // 설치하기 
+ng --version 		       // 설치버전확인
 ```
 
 
