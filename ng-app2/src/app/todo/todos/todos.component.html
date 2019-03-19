@@ -6,9 +6,14 @@
 <div class="todo_list" >
     <div *ngFor="let todo of todos">
         <app-todolist [todo]="todo"></app-todolist>
+        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button>
     </div>
 </div>
 
 <div class="btn_add">
-    <app-add-todo (onTodoadd)="addTodo($event)"></app-add-todo>
+    <app-add-todo (onTodoadd)="addTodo($event)"></app-add-todo>    
 </div>
+
+<button (click)="clear()" class="btn_re"><i class="fas fa-redo-alt"></i></button>
+
+
