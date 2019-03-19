@@ -55,6 +55,7 @@ ng serve --open     // 브라우저 시작
 
 
 # Todo list 예제만들기
+## 
 
 ### 0. 완성된 모습
 ![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
@@ -178,8 +179,11 @@ addTodo(newText: string) {
 }
 ```
 
+<br><hr/><br>
+
+## 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
+
 ### 9. todolist 컴포넌트 생성
-#### 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
 ```
@@ -225,8 +229,13 @@ todos: Todomodel[];
 ```
 <app-todolist [todo]="todo"></app-todolist> //속성바인딩
 ```
+
+<br><hr/><br>
+
+## 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
+
 ### 17. add-todo 컴포넌트 생성
-#### 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
+
 ```
 ng g c todo/todos/add-todo --inline-template --inline-style
 ```
@@ -291,16 +300,35 @@ addTodo(text: string) {
 }
 ```
 
+## 초기화 버튼 추가하기
+
+### 24. /todo/todos/todos.commonent.html  
+```
+<a href="javascript:;" (click)="clear()" class="btn_re"><i class="fas fa-redo-alt"></i></a>
+```
+
+### 25. index.html
+```
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+```
+
+### 26. /todo/todos/todos.commonent.ts
+```
+clear(){
+    this.todos = [];
+}
+```
+
 <br><hr/><br>
 
 ## 라우터 알아보기
 
-### 24.  mainlist 컴포넌트 추가
+### 27.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
 ```
 
-### 25. app-routing.module.ts
+### 28. app-routing.module.ts
 ```
 const routes: Routes = [
     { path: '', component: MainlistComponent},
@@ -308,7 +336,7 @@ const routes: Routes = [
 ];
 ```
 
-### 26. app.component.html
+### 29. app.component.html
 ```
 <h1>안녕하세요 Todo list입니다.</h1>
 
@@ -322,12 +350,12 @@ const routes: Routes = [
 
 ## 파이프를 알아보기
 
-### 27. /todo/todos/todos.component.ts
+### 30. /todo/todos/todos.component.ts
 ```
 today: Date = new Date();
 ```
 
-### 28. /todo/todos/todos.component.html
+### 31. /todo/todos/todos.component.html
 ```
 <h2>{{ today | date:'yy년 M월 d일' }}</h2>
 
@@ -338,7 +366,7 @@ today: Date = new Date();
 
 ## 전체 스타일
 
-### 29. src/style.css
+### 32. src/style.css
 ```
 * {margin:0; padding:0; box-sizing: border-box; outline:none;}
 body {background:#eee;}
