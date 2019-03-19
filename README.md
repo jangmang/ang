@@ -86,7 +86,7 @@ export class TodoModule { }
     <h1>나의 일정</h1>
     <h2>3월 18일</h2>
 </div>
-<div>
+<div class="todo_list">
     <div>
         <input type="checkbox"> 운동하기
     </div>
@@ -94,7 +94,7 @@ export class TodoModule { }
         <input type="checkbox"> 공부하기
     </div>
 </div>
-<div>
+<div class="btn_add">
     <input type="text" placeholder="할일 추가">
 </div>
 ```
@@ -179,7 +179,7 @@ addTodo(newText: string) {
 ```
 
 ### 9. todolist 컴포넌트 생성
-- 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
+#### 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
 ```
@@ -205,7 +205,7 @@ ng generate class todo/share/todomodel
 ```
 export class Todomodel {
     id: number;
-    test: string;
+    text: string;
 }
 ```
 
@@ -226,7 +226,7 @@ todos: Todomodel[];
 <app-todolist [todo]="todo"></app-todolist> //속성바인딩
 ```
 ### 17. add-todo 컴포넌트 생성
-- 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
+#### 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng g c todo/todos/add-todo --inline-template --inline-style
 ```
@@ -257,8 +257,8 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 ```
 export class AddTodoComponent implements OnInit {
 
-    @Output() onTodoAdded = new EventEmitter();
-    newText: string;
+    @Output() onTodoAdded = new EventEmitter(); // 상단 import가 @angular/core에 추가되야함.
+    newText: '';
 
     constructor() { }
 
@@ -333,3 +333,28 @@ today: Date = new Date();
 
 {{ todos | json }}
 ```
+
+<br><hr/><br>
+
+## 전체 스타일
+
+### 29. src/style.css
+```
+* {margin:0; padding:0; box-sizing: border-box; outline:none;}
+body {background:#eee;}
+h1, h2 {font-weight:normal; font-size:30px;}
+a {display:inline-block; width:50%; color:#000; text-align:center; text-decoration:none; padding:10px 0; border-left:1px solid #ccc; background:#fff}
+a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
+.title {color:#fff; padding:30px 20px; background: linear-gradient( to right, #540094, #973ff7 )}
+.todo_list {background:#fff;}
+.todo_list > div {padding:10px; border-bottom:1px solid #333}
+.todo_list > div label {padding-left:10px;}
+.todo_list > div input {position:relative;}
+.todo_list > div input:before {content:''; display:block; position:absolute; top:50%; left:50%; width:20px; height:20px; margin:-10px 0 0 -10px; border:1px solid #ccc; border-radius:20px; background:#fff}
+.todo_list > div input:checked:after {content:''; display:block; position:absolute; top:50%; left:50%; width:10px; height:10px; margin:-5px 0 0 -5px; border:1px solid #973ff7; border-radius:10px; background:#973ff7}
+.btn_add {position:relative; padding:10px; border-bottom:1px solid #ccc; background:#fff}
+.btn_add button {position:absolute; left:10px; top:10px; width:30px; height:30px; color:#fff; font-size:20px; border-radius:20px; border:0; background:darkblue;}
+.btn_add input {width:100%; height:30px; padding-left:50px; border:0; }
+```
+
+# END
