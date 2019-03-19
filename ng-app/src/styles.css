@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+* {margin:0; padding:0;}
+h1, h2 {font-weight:normal; font-size:30px;}
+a {display:inline-block; width:50%; color:#fff; text-align:center; padding:10px 0; background:#540094}
+a:hover, a:focus {background:#9f64cc}
+.title {color:#fff; padding:30px 20px; background: linear-gradient( to right, #973ff7, #540094 )}
+.todo_list > div {padding:10px; border-bottom:1px solid #ccc}
+.todo_list > div label {padding-left:10px;}
+.todo_list > div input {position:relative;}
+.todo_list > div input:before {content:''; display:block; position:absolute; top:50%; left:50%; width:20px; height:20px; margin:-10px 0 0 -10px; border:1px solid #ccc; border-radius:20px; background:#fff}
+.todo_list > div input:checked:after {content:''; display:block; position:absolute; top:50%; left:50%; width:10px; height:10px; margin:-5px 0 0 -5px; border:1px solid #973ff7; border-radius:10px; background:#973ff7}
