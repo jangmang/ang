@@ -392,6 +392,8 @@ a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 .btn_add {position:relative; padding:10px; border-bottom:1px solid #ccc; background:#fff}
 .btn_add button {position:absolute; left:10px; top:10px; width:30px; height:30px; color:#fff; font-size:20px; border-radius:20px; border:0; background:darkblue;}
 .btn_add input {width:100%; height:30px; padding-left:50px; border:0; }
+.btn_re {width:100%; font-size:20px; color:#000; text-align:center; text-decoration:none; padding:10px 0; border-left:1px solid #ccc; border:0; background:#fff}
+.btn_re:hover, .btn_re:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 ```
 
 # END
