@@ -328,16 +328,40 @@ clear(){
 }
 ```
 
+## 삭제 버튼 추가하기
+
+### 27. /todo/todos/todos.commonent.html  
+https://fontawesome.com/icons?d=gallery&m=free
+- 이미지파일없이 css아이콘을 제공하는 사이트
+```
+<div class="todo_list" >
+    <div *ngFor="let todo of todos">
+        <app-todolist [todo]="todo"></app-todolist>
+        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button> <!-- 추가하기 -->
+    </div>
+</div>
+```
+
+### 28. /todo/todos/todos.commonent.ts
+```
+clearTodo(todo){
+    let idx = this.todos.findIndex(function(item){
+        return item.id === todo.id;
+    });
+    this.todos.splice(idx,1); 
+}
+```
+
 <br><hr/><br>
 
 ## 라우터 알아보기
 
-### 27.  mainlist 컴포넌트 추가
+### 29.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
 ```
 
-### 28. app-routing.module.ts
+### 30. app-routing.module.ts
 ```
 const routes: Routes = [
     { path: '', component: MainlistComponent},
@@ -345,7 +369,7 @@ const routes: Routes = [
 ];
 ```
 
-### 29. app.component.html
+### 31. app.component.html
 ```
 <h1>안녕하세요 Todo list입니다.</h1>
 
@@ -359,12 +383,12 @@ const routes: Routes = [
 
 ## 파이프 알아보기
 
-### 30. /todo/todos/todos.component.ts
+### 32. /todo/todos/todos.component.ts
 ```
 today: Date = new Date();
 ```
 
-### 31. /todo/todos/todos.component.html
+### 33. /todo/todos/todos.component.html
 ```
 <h2>{{ today | date:'yy년 M월 d일' }}</h2>
 
@@ -375,7 +399,7 @@ today: Date = new Date();
 
 ## 전체 스타일
 
-### 32. src/style.css
+### 34. src/style.css
 ```
 * {margin:0; padding:0; box-sizing: border-box; outline:none;}
 body {background:#eee;}
