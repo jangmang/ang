@@ -55,7 +55,7 @@ ng serve --open     // 브라우저 시작
 
 
 # Todo list 예제만들기
-## 
+## 더브리즈 Dev Weekly
 
 ### 0. 완성된 모습
 ![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
