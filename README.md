@@ -59,11 +59,13 @@ ng serve --open     // 브라우저 시작
 
 ### 0. 완성된 모습
 ![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
+> 기대되는 학습효과
 - 모듈, 컴포넌트, 클래스 생성 및 사용하는법
 - ngFor, (click)바인딩, NgModel 양방향바인딩
 - 분리된 컴포넌트간의 접근법
 - Router 사용법
 - Pipe 사용법
+
 
 ### 1. 모듈/컴포넌트 생성
 ```
@@ -353,7 +355,7 @@ const routes: Routes = [
 
 <br><hr/><br>
 
-## 파이프를 알아보기
+## 파이프 알아보기
 
 ### 30. /todo/todos/todos.component.ts
 ```
