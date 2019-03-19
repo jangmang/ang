@@ -258,7 +258,7 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 export class AddTodoComponent implements OnInit {
 
     @Output() onTodoAdded = new EventEmitter();
-    newText: string;
+    newText: '';
 
     constructor() { }
 
