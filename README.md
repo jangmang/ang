@@ -86,7 +86,7 @@ export class TodoModule { }
     <h1>나의 일정</h1>
     <h2>3월 18일</h2>
 </div>
-<div>
+<div class="todo_list">
     <div>
         <input type="checkbox"> 운동하기
     </div>
@@ -94,7 +94,7 @@ export class TodoModule { }
         <input type="checkbox"> 공부하기
     </div>
 </div>
-<div>
+<div class="btn_add">
     <input type="text" placeholder="할일 추가">
 </div>
 ```
