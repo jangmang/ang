@@ -60,12 +60,14 @@ ng serve --open     // 브라우저 시작
 ### 0. 완성된 모습
 ![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
 > 기대되는 학습효과
-- 모듈, 컴포넌트, 클래스 생성 및 사용하는법
-- ngFor, (click)바인딩, NgModel 양방향바인딩
+- Angular CLI의 전반적인 사용법
+- 모듈, 컴포넌트, 클래스 생성 및 사용법
+- ngFor문, (click)바인딩, NgModel 양방향바인딩 등
 - 분리된 컴포넌트간의 접근법
 - Router 사용법
 - Pipe 사용법
 
+<br>
 
 ### 1. 모듈/컴포넌트 생성
 ```
