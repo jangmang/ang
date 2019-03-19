@@ -1,0 +1,14 @@
+<div class="title">
+    <h1>나의 하루</h1>
+    <h2>{{ today | date:'M월 d일' }}</h2>
+</div>
+
+<div class="todo_list" >
+    <div *ngFor="let todo of todos">
+        <app-todolist [todo]="todo"></app-todolist>
+    </div>
+</div>
+
+<div class="btn_add">
+    <app-add-todo (onTodoadd)="addTodo($event)"></app-add-todo>
+</div>
