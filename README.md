@@ -58,7 +58,7 @@ ng serve --open     // 브라우저 시작
 # 더브리즈 Dev Weekly - Angular TodoList 예제만들기
 
 ### 0. 완성된 모습
-![title](https://github.com/jangmang/ang/blob/master/es.JPG "ex")
+![title](https://github.com/jangmang/ang/blob/master/ex.JPG "ex")
 > 기대되는 학습효과
 - Angular CLI의 전반적인 사용법
 - 모듈, 컴포넌트, 클래스 생성 및 사용법
