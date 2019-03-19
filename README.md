@@ -179,7 +179,7 @@ addTodo(newText: string) {
 ```
 
 ### 9. todolist 컴포넌트 생성
-- 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
+####- 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
 ```
@@ -226,7 +226,7 @@ todos: Todomodel[];
 <app-todolist [todo]="todo"></app-todolist> //속성바인딩
 ```
 ### 17. add-todo 컴포넌트 생성
-- 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
+####- 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
 ```
 ng g c todo/todos/add-todo --inline-template --inline-style
 ```
@@ -257,7 +257,7 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 ```
 export class AddTodoComponent implements OnInit {
 
-    @Output() onTodoAdded = new EventEmitter();
+    @Output() onTodoAdded = new EventEmitter(); // 상단 import가 @angular/core에 추가되야함.
     newText: '';
 
     constructor() { }
