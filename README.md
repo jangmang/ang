@@ -205,7 +205,7 @@ ng generate class todo/share/todomodel
 ```
 export class Todomodel {
     id: number;
-    test: string;
+    text: string;
 }
 ```
 
