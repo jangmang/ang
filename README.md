@@ -357,4 +357,4 @@ a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 .btn_add input {width:100%; height:30px; padding-left:50px; border:0; }
 ```
 
-# 마무으리~
+# END
