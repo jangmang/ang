@@ -8,7 +8,10 @@
         <app-todolist [todo]="todo"></app-todolist>
         <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button>
     </div>
+
+    <div class="nodata" *ngIf="todos.length == 0"><i class="far fa-bell-slash"></i>목록이 없습니다</div>
 </div>
+
 
 <div class="btn_add">
     <app-add-todo (onTodoadd)="addTodo($event)"></app-add-todo>    
