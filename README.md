@@ -341,8 +341,8 @@ https://fontawesome.com/icons?d=gallery&m=free
 <div class="todo_list" >
     <div *ngFor="let todo of todos">
         <app-todolist [todo]="todo"></app-todolist>
-        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button> <!-- 추가하기 -->
-    </div>
+        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button> <!-- 추가하기 -->        
+    </div>   
 </div>
 ```
 
@@ -356,16 +356,27 @@ clearTodo(todo){
 }
 ```
 
+### 29. /todo/todos/todos.commonent.html  
+```
+<div class="todo_list" >
+    <div *ngFor="let todo of todos">
+        <app-todolist [todo]="todo"></app-todolist>
+        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button>      
+    </div>   
+    <div class="nodata" *ngIf="todos.length == 0"><i class="far fa-bell-slash"></i>목록이 없습니다</div> <!-- 추가하기 -->
+</div>
+```
+
 <br><hr/><br>
 
 ## 라우터 알아보기
 
-### 29.  mainlist 컴포넌트 추가
+### 30.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
 ```
 
-### 30. app-routing.module.ts
+### 31. app-routing.module.ts
 ```
 const routes: Routes = [
     { path: '', component: MainlistComponent},
@@ -373,7 +384,7 @@ const routes: Routes = [
 ];
 ```
 
-### 31. app.component.html
+### 32. app.component.html
 ```
 <h1>안녕하세요 Todo list입니다.</h1>
 
@@ -387,12 +398,12 @@ const routes: Routes = [
 
 ## 파이프 알아보기
 
-### 32. /todo/todos/todos.component.ts
+### 33. /todo/todos/todos.component.ts
 ```
 today: Date = new Date();
 ```
 
-### 33. /todo/todos/todos.component.html
+### 34. /todo/todos/todos.component.html
 ```
 <h2>{{ today | date:'yy년 M월 d일' }}</h2>
 
@@ -403,7 +414,7 @@ today: Date = new Date();
 
 ## 전체 스타일
 
-### 34. src/style.css
+### 35. src/style.css
 ```
 /* You can add global styles to this file, and also import other style files */
 * {margin:0; padding:0; box-sizing: border-box; outline:none;}
@@ -412,20 +423,23 @@ button {border:0; padding:0; background:none;}
 h1, h2 {font-weight:normal; font-size:30px;}
 a {display:inline-block; width:50%; color:#000; text-align:center; text-decoration:none; padding:10px 0; border-left:1px solid #ccc; background:#fff}
 a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
-.title {color:#fff; padding:30px 20px; background: linear-gradient( to right, #540094, #973ff7 )}
+.title {color:#fff; padding:30px 20px; background: linear-gradient( to right, #540094, #973ff7 ); box-shadow:inset 0px 10px 30px #450079}
 .todo_list {background:#fff;}
-.todo_list > div {position:relative; padding:10px; border-bottom:1px solid #333}
+.todo_list > div {position:relative; padding:10px; border-bottom:1px dotted #ddd; box-shadow:0px 3px 3px #fbfbfb}
 .todo_list > div label {padding-left:10px;}
 .todo_list > div input {position:relative;}
 .todo_list > div input:before {content:''; display:block; position:absolute; top:50%; left:50%; width:20px; height:20px; margin:-10px 0 0 -10px; border:1px solid #ccc; border-radius:20px; background:#fff}
 .todo_list > div input:checked:after {content:''; display:block; position:absolute; top:50%; left:50%; width:10px; height:10px; margin:-5px 0 0 -5px; border:1px solid #973ff7; border-radius:10px; background:#973ff7}
 .todo_list > div button {position:absolute; right:10px; top:0; width:40px; height:40px; font-size:20px; color:#540094}
 .todo_list > div button:hover {color:red}
+.todo_list .nodata {font-size:12px; text-align:center; padding:60px 0;}
+.todo_list .nodata i {display:block; color:#666; font-size:30px; margin-bottom:10px;}
 .btn_add {position:relative; padding:10px; border-bottom:1px solid #ccc; background:#fff}
 .btn_add button {position:absolute; left:10px; top:10px; width:30px; height:30px; color:#fff; font-size:20px; border-radius:20px; border:0; background:darkblue;}
 .btn_add input {width:100%; height:30px; padding-left:50px; border:0; }
 .btn_re {width:100%; font-size:20px; color:#000; text-align:center; text-decoration:none; padding:10px 0; border-left:1px solid #ccc; border:0; background:#fff}
 .btn_re:hover, .btn_re:focus {color:#fff; border-left:1px solid #540094; background:#540094}
+
 ```
 
 # END
