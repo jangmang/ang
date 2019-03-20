@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'app-add-todo',
     template: `
-    <button (click)="addTodo(newText)">추가</button>
+    <button (click)="addTodo(newText)">+</button>
     <input type="text" placeholder="할일 추가" [(ngModel)]="newText">    
   `,
     styles: []

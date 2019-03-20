@@ -15,6 +15,9 @@ export class TodosComponent implements OnInit {
         this.todos = [
             {id:1, text:"운동하기"},
             {id:2, text:"공부하기"},
+            {id:3, text:"강아지밥주기"},
+            {id:4, text:"운동하기"},
+            {id:5, text:"공부하기"},
         ];
     }
 

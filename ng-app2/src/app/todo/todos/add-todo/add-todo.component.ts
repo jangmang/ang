@@ -11,14 +11,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class AddTodoComponent implements OnInit {
 
     @Output() onTodoadd = new EventEmitter;
-    newText : '';
+    newText : string;
 
     constructor() { }
 
     ngOnInit() {
+        this.newText = '';
     }
 
-    addTodo(newText: string) {
+    addTodo(newText) {
         if (this.newText == '') {
             alert('할일을 입력하세요.');
             return false;
