@@ -155,7 +155,7 @@ export class TodosComponent implements OnInit {
 
 ### 5. /todo/todos/todos.component.ts
 ```
-newText = '';
+newText : string;
 ```
 
 ### 6. /todo/todo.module.ts
@@ -175,8 +175,12 @@ imports: [
 
 ### 8. /todo/todos/todos.component.ts
 ```
-addTodo(newText: string) {
-    if(this.newText=="") {
+ngOnInit() {
+    this.newText = '';
+}
+
+addTodo(newText) {
+    if(this.newText=='') {
         alert('할일을 입력해주세요.');
         return false;
     }
