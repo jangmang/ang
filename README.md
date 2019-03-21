@@ -442,9 +442,11 @@ a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 
 ```
 
-앵귤러 2010년 10월
-리액트 2013년 3월
-VUE 2014년 2
-![title](https://github.com/jangmang/ang/blob/master/graph.jpg "ex")
+## 번외
+
+앵귤러 2010년 10월<br>
+리액트 2013년 3월<br>
+VUE 2014년 2<br>
+![title](https://github.com/jangmang/ang/blob/master/graph.png "")
 
 # END
