@@ -442,11 +442,14 @@ a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 
 ```
 
-## 번외
+<br><hr/><br>
 
-앵귤러 2010년 10월<br>
-리액트 2013년 3월<br>
-VUE 2014년 2<br>
+## 번외편 - 앞으로의 생태계 동향
+
+- 앵귤러 2010년 10월
+- 리액트 2013년 3월
+- VUE 2014년 2
+
 ![title](https://github.com/jangmang/ang/blob/master/graph.png "")
 
 # END
