@@ -74,7 +74,8 @@ ng serve --open     // 브라우저 시작
 ng generate module todo                                     // 모듈 생성
 ng g c todo/todos --module todo/todo.module.ts --export     // 컴포넌트 생성 
 ```
-> #### 모듈에 컴포넌트 선언된 모습
+> #### /app/todo/todo.module.ts 
+- 모듈에 컴포넌트 선언된 모습
 ```
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -109,7 +110,26 @@ export class TodoModule { }
 </div>
 ```
 
-### 3. /todo/todos/todos.component.ts
+### 3. 서버를 시작해서 화면확인
+```
+ng serve --open
+```
+todos 컴포넌트 화면이 나오지 않는다.
+
+### 4. /app/app.component.html
+```
+<app-todos></app-todos>
+```
+
+### 5. /app/app.module.ts
+```
+imports: [    
+    TodoModule // 모듈 임포트 추가
+  ],
+```
+컴포넌트 화면이 잘나오는걸 확인한다.
+
+### 6. /todo/todos/todos.component.ts
 ```
 import { Component, OnInit } from '@angular/core';
 
@@ -119,7 +139,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {    
-    ***
+    /* [s] 추가 */
     todos: {
         id: number,
         text: string
@@ -131,34 +151,36 @@ export class TodosComponent implements OnInit {
             {id:2, text:"공부하기"},
         ];
     }
-    ***
+    /* [e] 추가 */
     ngOnInit() {
     }
 }
 ```
 
-### 4. /todo/todos/todos.component.html
+### 7. /todo/todos/todos.component.html
 ```
 <div class="title">
     <h1>나의 일정</h1>
     <h2>3월 18일</h2>
 </div>
 <div class="todo_list">
+    <!-- [s] 수정 -->
     <div *ngFor="let todo of todos">
         <input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label>
     </div>
+    <!-- [e] 수정 -->
 </div>
 <div class="btn_add">
-    <input type="text" placeholder="할일 추가" [(ngModel)]="newText">
+    <input type="text" placeholder="할일 추가" [(ngModel)]="newText"> <!-- [s] 수정 -->
 </div>
 ```
 
-### 5. /todo/todos/todos.component.ts
+### 8. /todo/todos/todos.component.ts
 ```
-newText : string;
+newText : string; // 추가
 ```
 
-### 6. /todo/todo.module.ts
+### 9. /todo/todo.module.ts
 ngModel사용을 위해 FormsModule을 추가해준다.<br>
 https://angular.kr/guide/template-syntax
 ```
@@ -168,12 +190,12 @@ imports: [
 ],
 ```
 
-### 7. /todo/todos/todos.component.html
+### 10. /todo/todos/todos.component.html
 ```
 <button (click)="addTodo(newText)">추가</button> 
 ```
 
-### 8. /todo/todos/todos.component.ts
+### 11. /todo/todos/todos.component.ts
 ```
 ngOnInit() {
     this.newText = '';
@@ -196,29 +218,29 @@ addTodo(newText) {
 
 ## 자식요소에서 부모요소를 받아오기 위해 분리해보겠습니다.
 
-### 9. todolist 컴포넌트 생성
+### 12. todolist 컴포넌트 생성
 ```
 ng generate component todo/todos/todolist --inline-template --inline-style // 인라인템플릿 형식으로 생성
 ```
 
-### 10. /todo/todos/todos.component.html
+### 13. /todo/todos/todos.component.html
 ```
 <input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label>
 ```
 을 잘라낸다.
 
-### 11. /todo/todos/todolist/todolist.component.ts
+### 14. /todo/todos/todolist/todolist.component.ts
 template에 붙혀넣는다
 ```
 <input type="checkbox" id="{{todo.id}}"><label for="{{todo.id}}">{{ todo.text }}</label> 
 ```
 
-### 12. /todo/share 폴더생성후
+### 15. /todo/share 폴더생성후
 ```
 ng generate class todo/share/todomodel
 ```
 
-### 13. /todo/share/todomodel.ts
+### 16. /todo/share/todomodel.ts
 ```
 export class Todomodel {
     id: number;
@@ -226,19 +248,19 @@ export class Todomodel {
 }
 ```
 
-### 14. /todo/todos/todolist/todolist.component.ts
+### 17. /todo/todos/todolist/todolist.component.ts
 ```
 import { Todomodel } from '../../share/Todomodel';
 @Input() todo: Todomodel; //input 데코레이터사용
 ```
 
-### 15. /todo/todos/todos.component.ts
+### 18. /todo/todos/todos.component.ts
 ```
 import { Todomodel } from '../../share/Todomodel';
 todos: Todomodel[];
 ```
 
-### 16. /todo/todos/todos.component.html
+### 19. /todo/todos/todos.component.html
 ```
 <app-todolist [todo]="todo"></app-todolist> //속성바인딩
 ```
@@ -247,13 +269,13 @@ todos: Todomodel[];
 
 ## 부모요소에서 자식요소를 받아오기 위해 분리해보겠습니다.
 
-### 17. add-todo 컴포넌트 생성
+### 20. add-todo 컴포넌트 생성
 
 ```
 ng g c todo/todos/add-todo --inline-template --inline-style
 ```
 
-### 18. /todo/todos/todos.commonent.html
+### 21. /todo/todos/todos.commonent.html
 ```
 <button (click)="addTodo(newText)">추가</button>
 <input type="text" placeholder="할일 추가" [(ngModel)]="newText">
@@ -264,18 +286,18 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 ```
 로 교체한다.
 
-### 19. /todo/todos/add-todo/add-todo.component.ts
+### 22. /todo/todos/add-todo/add-todo.component.ts
 - template에 붙혀넣는다.
 ```
 <button (click)="addTodo(newText)">추가</button>
 <input type="text" placeholder="할일 추가" [(ngModel)]="newText">
 ```
 
-### 20. /todo/todos/todos.component.ts
+### 23. /todo/todos/todos.component.ts
 - addTodo() 함수를 잘라낸다.
 - /todo/todos/add-todo/add-todo.component.ts 에 붙혀넣는다.
 
-### 21. /todo/todos/add-todo/add-todo.component.ts 
+### 24. /todo/todos/add-todo/add-todo.component.ts 
 ```
 export class AddTodoComponent implements OnInit {
 
@@ -298,12 +320,12 @@ export class AddTodoComponent implements OnInit {
 }
 ```
 
-### 22. /todo/todos/todos.commonent.html 
+### 25. /todo/todos/todos.commonent.html 
 ```
 <app-add-todo (onTodoAdded)="addTodo($event)"></app-add-todo>   
 ```
 
-### 23. /todo/todos/todos.commonent.ts
+### 26. /todo/todos/todos.commonent.ts
 ```
 addTodo(text: string) {
     this.todos.push({
@@ -315,17 +337,17 @@ addTodo(text: string) {
 
 ## 초기화 버튼 추가하기
 
-### 24. /todo/todos/todos.commonent.html  
+### 27. /todo/todos/todos.commonent.html  
 ```
 <a href="javascript:;" (click)="clear()" class="btn_re"><i class="fas fa-redo-alt"></i></a>
 ```
 
-### 25. index.html
+### 28. index.html
 ```
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 ```
 
-### 26. /todo/todos/todos.commonent.ts
+### 29. /todo/todos/todos.commonent.ts
 ```
 clear(){
     this.todos = [];
@@ -334,7 +356,7 @@ clear(){
 
 ## 삭제 버튼 추가하기
 
-### 27. /todo/todos/todos.commonent.html  
+### 30. /todo/todos/todos.commonent.html  
 https://fontawesome.com/icons?d=gallery&m=free
 - 이미지파일없이 css아이콘을 제공하는 사이트
 ```
@@ -346,7 +368,7 @@ https://fontawesome.com/icons?d=gallery&m=free
 </div>
 ```
 
-### 28. /todo/todos/todos.commonent.ts
+### 31. /todo/todos/todos.commonent.ts
 ```
 clearTodo(todo){
     let idx = this.todos.findIndex(function(item){
@@ -356,7 +378,7 @@ clearTodo(todo){
 }
 ```
 
-### 29. /todo/todos/todos.commonent.html  
+### 32. /todo/todos/todos.commonent.html  
 ```
 <div class="todo_list" >
     <div *ngFor="let todo of todos">
@@ -371,12 +393,12 @@ clearTodo(todo){
 
 ## 라우터 알아보기
 
-### 30.  mainlist 컴포넌트 추가
+### 33.  mainlist 컴포넌트 추가
 ```
 ng g c mainlist
 ```
 
-### 31. app-routing.module.ts
+### 34. app-routing.module.ts
 ```
 const routes: Routes = [
     { path: '', component: MainlistComponent},
@@ -384,7 +406,7 @@ const routes: Routes = [
 ];
 ```
 
-### 32. app.component.html
+### 35. app.component.html
 ```
 <h1>안녕하세요 Todo list입니다.</h1>
 
@@ -398,12 +420,12 @@ const routes: Routes = [
 
 ## 파이프 알아보기
 
-### 33. /todo/todos/todos.component.ts
+### 36. /todo/todos/todos.component.ts
 ```
 today: Date = new Date();
 ```
 
-### 34. /todo/todos/todos.component.html
+### 37. /todo/todos/todos.component.html
 ```
 <h2>{{ today | date:'yy년 M월 d일' }}</h2>
 
@@ -414,7 +436,7 @@ today: Date = new Date();
 
 ## 전체 스타일
 
-### 35. src/style.css
+### 38. src/style.css
 ```
 /* You can add global styles to this file, and also import other style files */
 * {margin:0; padding:0; box-sizing: border-box; outline:none;}
