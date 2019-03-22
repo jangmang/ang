@@ -477,7 +477,7 @@ a:hover, a:focus {color:#fff; border-left:1px solid #540094; background:#540094}
 
 <br><hr/><br>
 
-## 번외편 - 앞으로의 생태계 동향파악
+## 번외편 - 프레임워크 생태계의 향후 동향파악
 
 - 2010년 10월 - 앵귤러
 - 2013년 03월 - 리액트
