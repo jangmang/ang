@@ -237,7 +237,7 @@ template에 붙혀넣는다
 
 ### 15. /todo/share 폴더생성후
 ```
-ng generate class todo/share/todomodel
+ng generate class todo/share/todoModel
 ```
 
 ### 16. /todo/share/todomodel.ts
