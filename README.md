@@ -301,15 +301,17 @@ ng g c todo/todos/add-todo --inline-template --inline-style
 ```
 export class AddTodoComponent implements OnInit {
 
-    @Output() onTodoAdded = new EventEmitter(); // 상단 import가 @angular/core에 추가되야함.
-    newText: '';
+    @Output() onTodoAdded = new EventEmitter(); // 추가 : EventEmitter가 상단 import angular/core에 추가되야함.
+    newText: string; // 추가
 
     constructor() { }
 
     ngOnInit() {
+      newText: ''; // 추가
     }
-
-    addTodo(newText: string) {
+  
+    /* [s] 수정 */
+    addTodo(newText) { 
         if (this.newText == "") {
             alert('할일을 입력해주세요.');
             return false;
@@ -317,30 +319,41 @@ export class AddTodoComponent implements OnInit {
         this.onTodoAdded.emit(newText);
         this.newText = '';
     }
+    /* [e] 수정 */
 }
 ```
 
-### 25. /todo/todos/todos.commonent.html 
+### 25. /todo/todos/todos.commonent.ts
 ```
-<app-add-todo (onTodoAdded)="addTodo($event)"></app-add-todo>   
-```
+newText : string; //삭제
 
-### 26. /todo/todos/todos.commonent.ts
-```
-addTodo(text: string) {
+ngOnInit() {
+    this.newText = ''; //삭제
+}
+
+/* [s] 추가 */
+addTodo(event: string) {
     this.todos.push({
         id:this.todos.length+1,
-        text:text
+        text: event
     });
 }
+/* [e] 추가 */
+```
+
+### 26. /todo/todos/todos.commonent.html 
+```
+<app-add-todo (onTodoAdded)="addTodo($event)"></app-add-todo>   
 ```
 
 ## 초기화 버튼 추가하기
 
 ### 27. /todo/todos/todos.commonent.html  
 ```
-<a href="javascript:;" (click)="clear()" class="btn_re"><i class="fas fa-redo-alt"></i></a>
+<button class="btn_re" (click)="clear()"><i class="fas fa-redo-alt"></i></button>
 ```
+https://fontawesome.com/icons?d=gallery&m=free
+- 이미지파일없이 css아이콘을 제공하는 사이트
 
 ### 28. index.html
 ```
@@ -357,8 +370,6 @@ clear(){
 ## 삭제 버튼 추가하기
 
 ### 30. /todo/todos/todos.commonent.html  
-https://fontawesome.com/icons?d=gallery&m=free
-- 이미지파일없이 css아이콘을 제공하는 사이트
 ```
 <div class="todo_list" >
     <div *ngFor="let todo of todos">
@@ -395,7 +406,7 @@ clearTodo(todo){
 
 ### 33.  mainlist 컴포넌트 추가
 ```
-ng g c mainlist
+ng g c mainPage
 ```
 
 ### 34. app-routing.module.ts
@@ -408,10 +419,10 @@ const routes: Routes = [
 
 ### 35. app.component.html
 ```
-<h1>안녕하세요 Todo list입니다.</h1>
-
-<a routerLink="/">Main</a>
-<a routerLink="/todo">Todo</a>
+<nav>
+    <a routerLink="/">MAIN</a>
+    <a routerLink="/todo">TODO</a>
+</nav>
 
 <router-outlet></router-outlet>
 ```
