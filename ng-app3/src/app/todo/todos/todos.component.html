@@ -1,0 +1,15 @@
+<div class="title">
+    <h1>나의 일정</h1>
+    <h2>3월 21일</h2>
+</div>
+
+<div class="todo_list">
+    <div *ngFor="let todo of todos">
+        <input type="checkbox" id="{{ todo.id }}"><label for="{{ todo.id }}">{{ todo.text }}</label>
+    </div>
+</div>
+
+<div class="btn_add">
+    <button (click)="addTodo(newText)">추가</button>
+    <input type="text" placeholder="할일을 추가해주세요" [(ngModel)]="newText">
+</div>
