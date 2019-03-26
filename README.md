@@ -307,7 +307,7 @@ export class AddTodoComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-      newText: ''; // 추가
+      this.newText = ''; // 추가
     }
   
     /* [s] 수정 */
