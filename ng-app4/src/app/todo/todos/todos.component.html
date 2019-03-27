@@ -1,16 +1,15 @@
 <div class="title">
     <h1>나의 일정</h1>
-    <h2>{{ today | date:'yyyy년 M월 d일' }}</h2>
+    <h2>{{ today | date:'M월 d일' }}</h2>    
 </div>
 
 <div class="todo_list">
     <div *ngFor="let todo of todos">
         <app-todolist [todo]="todo"></app-todolist>
-        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button>
+        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button> <!-- 추가하기 -->  
     </div>
-    <div class="nodata" *ngIf="todos.length == 0"><i class="far fa-bell-slash"></i>목록이 없습니다.</div>
+    <div class="nodata" *ngIf="todos.length == 0"><i class="far fa-bell-slash"></i>목록이 없습니다</div> <!-- 추가하기 -->
 </div>
-
 <div class="btn_add">
     <app-add-todo (onTodoAdded)="addTodo($event)"></app-add-todo>
 </div>
