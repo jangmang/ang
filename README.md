@@ -432,13 +432,18 @@ const routes: Routes = [
 ## 파이프 알아보기
 
 ### 36. /todo/todos/todos.component.ts
+new Date를 생성하고 1초마다 바뀌도록 setInterval 추가
 ```
 today: Date = new Date();
+
+constructor() {   
+    setInterval(()=> { this.today = new Date() }, 1000); //추가
+}
 ```
 
 ### 37. /todo/todos/todos.component.html
 ```
-<h2>{{ today | date:'yy년 M월 d일' }}</h2>
+<h2>{{ today | date:'yy년 M월 d일 s초' }}</h2>
 
 {{ todos | json }}
 ```
