@@ -4,12 +4,14 @@ import { TodosComponent } from './todos/todos.component';
 import { FormsModule } from '@angular/forms';
 import { TodoslistComponent } from './todos/todoslist/todoslist.component';
 import { AddTodoComponent } from './todos/add-todo/add-todo.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [TodosComponent, TodoslistComponent, AddTodoComponent],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   exports: [TodosComponent]
 })

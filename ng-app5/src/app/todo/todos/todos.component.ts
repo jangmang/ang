@@ -8,26 +8,31 @@ import { TodoModel } from '../share/todo-model';
 })
 export class TodosComponent implements OnInit {
 
-    todos: TodoModel[];   
+    todos: TodoModel[];
 
-    today: Date = new Date();   
+    today: Date = new Date();
 
+    idx: number;
+
+    currentHero: [
+        { name: string }
+
+    ]
     constructor() {
         this.todos = [
-            { id: 1, text: "운동하기" },
-            { id: 2, text: "공부하기" },
-        ];        
+            { text: "운동하기" },
+            { text: "공부하기" },
+        ];
 
-        setInterval(()=> { this.today = new Date() }, 1000);
+        setInterval(() => { this.today = new Date() }, 1000);
     }
 
-    ngOnInit() {       
+    ngOnInit() {
 
     }
 
     addTodo(event: string) {
         this.todos.push({
-            id: this.todos.length + 1,
             text: event
         });
     }
@@ -36,11 +41,7 @@ export class TodosComponent implements OnInit {
         this.todos = [];
     }
 
-    clearTodo(todo) {
-        let idx = this.todos.findIndex(function (item) {
-            return item.id === todo.id;
-        });
-        console.log(idx);
+    clearTodo(idx) {
         this.todos.splice(idx, 1);
     }
 }

@@ -4,7 +4,7 @@ import { TodoModel } from '../../share/todo-model';
 @Component({
     selector: 'app-todoslist',
     template: `
-    <input type="checkbox" id="{{ todo.id }}"> <label for="{{ todo.id }}">{{ todo.text }}</label>
+    <input type="checkbox" id="{{ idx }}"> <label for="{{ idx }}">{{ todo.text }}</label>
   `,
     styles: [
 
@@ -13,6 +13,7 @@ import { TodoModel } from '../../share/todo-model';
 export class TodoslistComponent implements OnInit {
     
     @Input() todo: TodoModel;
+    @Input() idx: number;
     constructor() { }
 
     ngOnInit() {

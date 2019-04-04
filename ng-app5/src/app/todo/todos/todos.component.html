@@ -1,17 +1,17 @@
 <div class="title">
     <h1>나의 일정</h1>
-    <h1>{{ today | date:'yy년 m월 s초'}}</h1>
+    <h1>{{ today | date:'M월 d일 h시 m분 ss초'}}</h1>
 </div>
 
 
-    <a routerLink="/">MAIN</a>
-    <a routerLink="/todo">TODO</a>
+    <a routerLink="/">메인으로</a>
+    <a routerLink="/todo">리스트로</a>
 
 
 <div class="todo_list">
-    <div *ngFor="let todo of todos">
-        <app-todoslist [todo]="todo"></app-todoslist>
-        <button (click)="clearTodo(todo)"><i class="fas fa-backspace"></i></button>
+    <div *ngFor="let todo of todos; let idx=index">
+        <app-todoslist [todo]="todo" [idx]="idx"></app-todoslist>
+        <button (click)="clearTodo(idx)"><i class="fas fa-backspace"></i></button>
     </div>
     <div class="nodata" *ngIf="todos.length == 0"><i class="far fa-bell-slash"></i>목록이 없습니다</div>
 </div>
