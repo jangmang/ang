@@ -1,8 +1,9 @@
 <h1>안녕하세요 Angular7 입니다</h1>
 
 <nav>
-    <a routerLink="/list">리스트</a> | 
-    <a routerLink="/detail">상세</a>
+    <a routerLink="/list" routerLinkActive="on">리스트</a> 
+    <a routerLink="/detail" routerLinkActive="on">상세</a>
+    <button (click)="gotoTodo()">상세(함수링크)</button>
 </nav>
 
 <hr/>

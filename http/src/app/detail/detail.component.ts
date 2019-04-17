@@ -19,7 +19,7 @@ import { TodoService } from '../todo.service';
     <button (click)="addTodo()">Add</button>
     <ul>
         <li *ngFor="let todo of todos" [class.completed]="!todo.completed">
-            {{ todo.content }}
+            <a routerLink="/list/{{todo.id}}">{{ todo.content }}</a>
             <button (click)="changeTodo(todo)">Change</button>
             <button (click)="toggleTodo(todo)">Toggle</button>
             <button (click)="removeTodo(todo.id)">delete</button>

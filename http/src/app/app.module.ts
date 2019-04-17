@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
+import { ListInnerComponent } from './list/list-inner/list-inner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    DetailComponent
+    DetailComponent,
+    ListInnerComponent
   ],
   imports: [
     BrowserModule,
