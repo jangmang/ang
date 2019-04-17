@@ -1,0 +1,14 @@
+{
+  "todos": [
+    {
+      "content": "ㅇ",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "content": "ㅇ",
+      "completed": false,
+      "id": 2
+    }
+  ]
+}
