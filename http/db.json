@@ -1,29 +1,29 @@
 {
   "todos": [
     {
-      "content": "동해물과",
+      "content": "Angular",
       "completed": false,
       "id": 1
     },
     {
-      "content": "백두산이",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "content": "마르고 닳도록",
+      "content": "Angular",
       "completed": false,
       "id": 3
     },
     {
-      "content": "하느님이 보우하사",
-      "completed": false,
+      "content": "Angular",
+      "completed": true,
       "id": 4
     },
     {
-      "content": "우리나라 만세!",
+      "content": "Angular",
       "completed": false,
       "id": 5
+    },
+    {
+      "content": "Angular",
+      "completed": true,
+      "id": 6
     }
   ]
 }

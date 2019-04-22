@@ -17,7 +17,9 @@ import 'slick-carousel';
     </ul> 
     
     <hr/>
-    <router-outlet></router-outlet>
+    <div style="padding:20px; margin:20px; border:1px solid #ddd; background:#fbfbfbd1">
+        <router-outlet></router-outlet>
+    </div>
 
     <p *ngIf="todoId">파라미터값 <strong style="color:red;">'{{ todoId }}'</strong>을 전달받았습니다.</p>
     
@@ -40,7 +42,7 @@ import 'slick-carousel';
     }
 
     .carousel-container {
-      width: 500px;
+      width: 100%;
       margin: 0 auto;
     }
 
@@ -61,7 +63,7 @@ export class ListComponent implements OnInit {
 
     constructor(private todo: TodoService, private route: ActivatedRoute) {
         console.log();
-    }
+    }   
 
     ngOnInit() {
         this.todo.getAll()

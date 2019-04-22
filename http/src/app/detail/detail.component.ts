@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Todo } from '../todo.interface';
 import { TodoService } from '../todo.service';
+
+import * as $ from 'jquery'; //제이쿼리
 
 //import { Observable } from 'rxjs';
 
@@ -17,7 +19,7 @@ import { TodoService } from '../todo.service';
     template: `
     <input type="text" [(ngModel)]="content" placeholder="todo">
     <button (click)="addTodo()">Add</button>
-    <ul>
+    <ul #ulh>
         <li *ngFor="let todo of todos" [class.completed]="!todo.completed">
             <a routerLink="/list/{{todo.id}}">{{ todo.content }}</a>
             <button (click)="changeTodo(todo)">Change</button>
@@ -37,7 +39,12 @@ export class DetailComponent implements OnInit {
 
     //url = 'http://localhost:3000/todos';
 
-    constructor(private todo: TodoService) { }
+    @ViewChild('ulh') ulh: ElementRef;
+
+    constructor(private todo: TodoService) { 
+
+         console.log($("ul").height());
+    }
 
     ngOnInit() {
         this.todo.getAll()
@@ -45,7 +52,16 @@ export class DetailComponent implements OnInit {
                 todos => this.todos = todos,
                 error => console.error('[TodoService.getAll]', error)
             );
+
+        console.log($("ul").height());
     }
+
+    ngAfterViewInit(){console.log($("ul").height())}
+
+    ngAfterViewChecked(){console.log($("ul").height())}
+
+    
+
 
     addTodo() {
         if (!this.content) {
