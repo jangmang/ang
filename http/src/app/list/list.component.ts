@@ -11,7 +11,7 @@ import 'slick-carousel';
 @Component({
     selector: 'app-list',
     template: `
-    <ul>
+    <ul class="todo_list">
         <li *ngFor="let todo of todos"><a [routerLink]="['/list', todo.id]">{{ todo.content }}</a></li>
         <li><a routerLink="/list">파라미터없는 서브링크</a></li>        
     </ul> 

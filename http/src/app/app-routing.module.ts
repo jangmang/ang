@@ -5,6 +5,8 @@ import { DetailComponent } from './detail/detail.component';
 import { ListInnerComponent } from './list/list-inner/list-inner.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
+import { AuthGuard } from './auth/auth.guard'; //canActivate
+
 const routes: Routes = [
     {path:'', redirectTo:'/list', pathMatch:'full'},
     {   
@@ -19,7 +21,7 @@ const routes: Routes = [
     //{path:'list/:id', component:ListComponent},
     // {path:'listinner', component:ListInnerComponent},
     // {path:'listinner/:id', component:ListInnerComponent},
-    {path:'detail', component:DetailComponent, data: {animation: 'hero'}},
+    {path:'detail', component:DetailComponent, data: {animation: 'hero'}, canActivate: [AuthGuard]}, //canActivate
     {path:'**', component:NotfoundComponent}
 ];
 

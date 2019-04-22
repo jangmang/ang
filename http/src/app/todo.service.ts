@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { Todo } from './todo.interface';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: 'root' //서비스 프로바이더 범위가 최상위
 })
 export class TodoService {
     url = 'http://localhost:3000/todos';
@@ -47,7 +47,7 @@ export class TodoService {
 
     add(content: string): Observable<Todo> {
         /* 서버로 전송할 요청 페이로드. id는 json-server에 의해 자동 생성된다. */
-        const payload = { content, completed: false };
+        const payload = { content, completed: true };
         return this.http.post<Todo>(this.url, payload)
             .pipe(catchError(this.handleError));
     }

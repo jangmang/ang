@@ -17,9 +17,11 @@ import * as $ from 'jquery'; //제이쿼리
 @Component({
     selector: 'app-detail',
     template: `
-    <input type="text" [(ngModel)]="content" placeholder="todo">
-    <button (click)="addTodo()">Add</button>
-    <ul #ulh>
+    <div class="search_box">
+        <input type="text" [(ngModel)]="content" placeholder="todo">
+        <button (click)="addTodo()">Add</button>
+    </div>
+    <ul class="todo_list" #ulh>
         <li *ngFor="let todo of todos" [class.completed]="!todo.completed">
             <a routerLink="/list/{{todo.id}}">{{ todo.content }}</a>
             <button (click)="changeTodo(todo)">Change</button>
@@ -43,7 +45,7 @@ export class DetailComponent implements OnInit {
 
     constructor(private todo: TodoService) { 
 
-         console.log($("ul").height());
+        //console.log($("ul").height());
     }
 
     ngOnInit() {
@@ -53,12 +55,12 @@ export class DetailComponent implements OnInit {
                 error => console.error('[TodoService.getAll]', error)
             );
 
-        console.log($("ul").height());
+        //console.log($("ul").height());
     }
 
-    ngAfterViewInit(){console.log($("ul").height())}
+    //ngAfterViewInit(){console.log($("ul").height())}
 
-    ngAfterViewChecked(){console.log($("ul").height())}
+    //ngAfterViewChecked(){console.log($("ul").height())}
 
     
 
