@@ -1,0 +1,6 @@
+.form-group {padding:10px 15px;}
+.form-group label {display:block; margin-bottom:5px;}
+.form-group input {width:100%; height:30px; padding-left:10px; border:1px solid #666; background:#fff;}
+em {display:block; color:red;}
+
+button {display:block; min-width:130px; height:40px; margin:10px auto 0;}

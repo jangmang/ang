@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Reactive form Exam</h2>
+
+    <form [formGroup]="userForm" novalidate>
+
+        <div class="form-group">
+            <label for="userid">User Id</label>
+            <input type="text" name="userid" formControlName="userid">
+            <em *ngIf="userid.errors?.required && userid.touched">user id를 입력해주세요.</em>
+            <em *ngIf="userid.errors?.pattern && userid.touched">user id는 영문 또는 숫자로 4~10자리로 입력해주세요.</em>
+        </div>
+
+        <div formGroupName="passwordGroup">
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" name="password" formControlName="password">
+                <em *ngIf="password.errors?.required && password.touched">password를 입력해주세요.</em>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">password</label>
+                <input type="password" name="confirmPassword" formControlName="confirmPassword">
+                <em *ngIf="confirmPassword.errors?.required && confirmPassword.touched">password를 입력해주세요.</em>
+                <em *ngIf="passwordGroup.errors?.match && confirmPassword.touched">password가 일치하지 않습니다!</em>
+            </div>
+        </div>
+
+        <!-- <div formArrayName="hobbies">
+            <div *ngFor="let hobby of hobbies.controls; let i=index">
+                <div class="form-group">
+                    <label for="hobby{{i}}">hobby {{i}}</label>
+                    <input typr="text" name="hobby{{i}}" [formControlName]="i"> 
+                </div>
+            </div>
+        </div>  -->
+
+        <button type="submit" [disabled]="userForm.invalid">Submit</button>
+        
+        <hr/>
+
+        <pre>{{ userForm.value | json }}</pre>
+        <pre>{{ userForm.status }}</pre>
+       
+
+    </form>
+</div>

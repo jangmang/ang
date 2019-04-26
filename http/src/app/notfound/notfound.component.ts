@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-notfound',
   template: `
     <p>
-      서버를 찾을 수 있습니다.
+      서버를 찾을 수 없습니다.
     </p>
   `,
   styles: []
